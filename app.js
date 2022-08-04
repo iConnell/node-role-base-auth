@@ -5,6 +5,7 @@ const authRoutes = require("./routes/auth");
 const adminRoutes = require("./routes/admin");
 const managerRoutes = require("./routes/manager");
 const staffRoutes = require("./routes/staff");
+const userRoutes = require("./routes/user");
 
 const {
   authMiddleware,
@@ -18,6 +19,7 @@ const app = express();
 app.use(express.json());
 app.use("/auth", authRoutes);
 app.use(authMiddleware);
+app.use("", userRoutes);
 app.use("/admin", adminMiddleware, adminRoutes);
 app.use("/manager", managerMiddleware, managerRoutes);
 app.use("/staff", staffMiddleware, staffRoutes);
