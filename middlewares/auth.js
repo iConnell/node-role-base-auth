@@ -15,7 +15,6 @@ const authMiddleware = async (req, res, next) => {
     const userDetails = jwt.verify(inputToken, process.env.JWT_SECRET);
 
     req.user = userDetails;
-
     next();
   } catch (error) {
     return res.status(401).send("Invalid Token");
@@ -23,7 +22,7 @@ const authMiddleware = async (req, res, next) => {
 };
 
 const staffMiddleware = async (req, res, next) => {
-  if (req.user.type != "S") {
+  if (req.user.userType != "S") {
     return res
       .status(401)
       .send("you're not authorized to access this resource");
@@ -32,7 +31,7 @@ const staffMiddleware = async (req, res, next) => {
 };
 
 const managerMiddleware = async (req, res, next) => {
-  if (req.user.type != "M") {
+  if (req.user.userType != "M") {
     return res
       .status(401)
       .send("You're not authorized to access this resource");
@@ -41,11 +40,12 @@ const managerMiddleware = async (req, res, next) => {
 };
 
 const adminMiddleware = async (req, res, next) => {
-  if (req.user.type != "A") {
+  if (req.user.userType != "A") {
     return res
       .status(401)
       .send("You're not authorized to access this resource");
   }
+  next();
 };
 module.exports = {
   authMiddleware,
