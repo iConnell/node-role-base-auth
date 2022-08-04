@@ -9,5 +9,11 @@ const {
 
 const router = express.Router();
 
-router.route("/all-staff").get(allStaff).post(createStaff);
-router.route("staff").get(getStaff).patch(updateStaff).delete(deleteStaff);
+router.route("/staffs").get(allStaff).post(createStaff);
+router
+  .route("/staff/:userID")
+  .get(getStaff)
+  .patch(updateStaff)
+  .delete(deleteStaff);
+
+module.exports = router;

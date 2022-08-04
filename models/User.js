@@ -40,7 +40,7 @@ const UserSchema = new mongoose.Schema({
   },
   userType: {
     type: String,
-    enum: ["R", "S", "A"],
+    enum: ["R", "M", "S", "A"],
     required: true,
     default: "R",
   },

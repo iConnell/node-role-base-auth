@@ -21,9 +21,13 @@ const getStaff = async (req, res) => {
 
 const updateStaff = async (req, res) => {
   const { userID } = req.params;
-  const staff = await User.findOneAndUpdate({ _id: userID }, req.body, {
-    new: yes,
-  });
+  const staff = await User.findOneAndUpdate(
+    { _id: userID, userType: "S" },
+    req.body,
+    {
+      new: true,
+    }
+  );
 
   res.status(200).json({ staff });
 };

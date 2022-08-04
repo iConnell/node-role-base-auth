@@ -4,6 +4,8 @@ require("dotenv").config();
 const authRoutes = require("./routes/auth");
 const adminRoutes = require("./routes/admin");
 const managerRoutes = require("./routes/manager");
+const staffRoutes = require("./routes/staff");
+
 const {
   authMiddleware,
   staffMiddleware,
@@ -18,6 +20,7 @@ app.use("/auth", authRoutes);
 app.use(authMiddleware);
 app.use("/admin", adminMiddleware, adminRoutes);
 app.use("/manager", managerMiddleware, managerRoutes);
+app.use("/staff", staffMiddleware, staffRoutes);
 
 const port = process.env.PORT || 8000;
 

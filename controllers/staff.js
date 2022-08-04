@@ -1,17 +1,41 @@
-const allStaff = async (req, res) => {};
+const User = require("../models/User");
 
-const getAllStaff = async (req, res) => {};
+const getUsers = async (req, res) => {
+  const users = await User.find({ userType: "R" });
 
-const getStaff = async (req, res) => {};
+  res.status(200).json({ users });
+};
 
-const updateStaff = async (req, res) => {};
+const getUser = async (req, res) => {
+  const { userID } = req.params;
+  const user = await User.findOne({ _id: userID, userType: "R" });
 
-const deleteStaff = async (req, res) => {};
+  res.status(200).json({ user });
+};
+
+const updateUser = async (req, res) => {
+  const { userID } = req.params;
+  const user = await User.findOneAndUpdate(
+    { _id: userID, userType: "R" },
+    req.body,
+    {
+      new: true,
+    }
+  );
+
+  res.status(200).json({ user });
+};
+
+const deleteUser = async (req, res) => {
+  const { userID } = req.params;
+  await user.findOneAndDelete({ _id: userID, userType: "R" });
+
+  res.status(204).send("deleted");
+};
 
 module.exports = {
-  allStaff,
-  getAllStaff,
-  getStaff,
-  updateStaff,
-  deleteStaff,
+  getUsers,
+  getUser,
+  updateUser,
+  deleteUser,
 };
