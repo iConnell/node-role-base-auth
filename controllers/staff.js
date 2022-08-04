@@ -28,7 +28,7 @@ const updateUser = async (req, res) => {
 
 const deleteUser = async (req, res) => {
   const { userID } = req.params;
-  await user.findOneAndDelete({ _id: userID, userType: "R" });
+  await User.findOneAndDelete({ _id: userID, userType: "R" });
 
   res.status(204).send("deleted");
 };
