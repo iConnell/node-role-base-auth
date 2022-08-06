@@ -92,12 +92,9 @@ const deleteAll = async (req, res) => {
   res.status(200).json({ msg: "done" });
 };
 
-const logout = async (req, res) => {};
-
 module.exports = {
   register,
   login,
-  logout,
   resetPassword,
   changePassword,
 

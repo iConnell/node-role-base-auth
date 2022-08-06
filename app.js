@@ -24,6 +24,12 @@ app.use("/admin", adminMiddleware, adminRoutes);
 app.use("/manager", managerMiddleware, managerRoutes);
 app.use("/staff", staffMiddleware, staffRoutes);
 
+app.use("/logout", (req, res) => {
+  delete req.user;
+
+  res.status(200).send("logout successful");
+});
+
 const port = process.env.PORT || 8000;
 
 const start = async () => {
