@@ -32,4 +32,22 @@
 
 ## <p align="center"> Manager Endpoints </p>
 
+### Manager Register
+![image](https://user-images.githubusercontent.com/30987921/183268103-9c3b213e-1c96-4065-b4cd-b64dfe119e43.png)
+
+### List all Staff
+![image](https://user-images.githubusercontent.com/30987921/183268186-df6b1ada-b940-4ad6-ad63-54314ff8be8c.png)
+
+### Accessing the manager endpoint by a staff
+![image](https://user-images.githubusercontent.com/30987921/183268215-48d8f988-5e10-405f-bd4c-0cbceca479a4.png)
+
+
+## <p align="center"> Staff Enpoints </p>
+
+### List all Regular Users
+![image](https://user-images.githubusercontent.com/30987921/183268290-48ee4a15-f27e-4296-8397-12cc07b9ab56.png)
+
+
+### Regular User attempting Staff endpoint
+![image](https://user-images.githubusercontent.com/30987921/183268352-60bf4ed5-39b2-4c4b-ad5f-4d9fcc01c2b0.png)
 
