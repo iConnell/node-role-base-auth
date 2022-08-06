@@ -3,7 +3,7 @@ const User = require("../models/User");
 const getUsers = async (req, res) => {
   const users = await User.find({ userType: "R" });
 
-  res.status(200).json({ users });
+  res.status(200).json({ count: users.length, users });
 };
 
 const getUser = async (req, res) => {

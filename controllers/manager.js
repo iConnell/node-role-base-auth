@@ -7,9 +7,9 @@ const createStaff = async (req, res) => {
 };
 
 const allStaff = async (req, res) => {
-  const staffs = await User.find({ userType: "S" });
+  const staff = await User.find({ userType: "S" });
 
-  res.status(200).json({ staffs });
+  res.status(200).json({ count: staff.length, staff });
 };
 
 const getStaff = async (req, res) => {
